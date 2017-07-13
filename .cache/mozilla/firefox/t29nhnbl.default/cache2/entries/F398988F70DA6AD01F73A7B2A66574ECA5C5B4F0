@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"89b8075f9d","applicationID":"31563158","transactionName":"JVlfRkRcW1hRRR9HRAlCWEJFHERcW0A=","queueTime":4,"applicationTime":67,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta property='current_user:id'>
+<meta charset="UTF-8" />
+<title>Basic Vim commands - For getting started (Example)</title>
+<meta name="description" content="A protip by shiva about vim, unix, vi, and commands." />
+<meta name="keywords" content="vim, unix, vi, commands" />
+<link rel="canonical" href="https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started" />
+<link rel="author" href="https://coderwall.com/shiva" />
+<meta property="og:title" content="Basic Vim commands - For getting started (Example)" />
+<meta property="og:url" content="https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started" />
+<meta property="og:site_name" content="Coderwall" />
+<meta property="og:description" content="A protip by shiva about vim, unix, vi, and commands." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/22876/IMG_1652_small.JPG" />
+<meta name="twitter:title" content="Basic Vim commands - For getting started (Example)" />
+<meta name="twitter:url" content="https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started" />
+<meta name="twitter:site_name" content="Coderwall" />
+<meta name="twitter:site" content="@coderwall" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator:id" content="28953230" />
+<meta name="twitter:image" content="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/22876/IMG_1652_small.JPG" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" media="all" href="https://d1ujcb8mxkwm85.cloudfront.net/assets/application_static-8cd0567f17b372fd07cb9de3659f01a06b0ac69ab55f9c66d395f0b8ebfe2180.css" data-turbolinks-track="reload" />
+
+<script src="https://d1ujcb8mxkwm85.cloudfront.net/assets/application_static-df7a040d64fc527786b488987b70e4696685067d41998c7e0acda504beb4e768.js" data-turbolinks-track="reload"></script>
+<script src="https://content.jwplatform.com/libraries/pEaCoeG7.js"></script>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="XqUbuQQ4cYSy+pFphznOYz9x8HXkr3BvG5a1w+Mq4wo3fxLZIo/JzBIc93p7wWxDTsPTKlC49hKn4zWyu4Dc7A==" />
+<!-- https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-797907-8', 'auto');
+  </script>
+
+
+</head>
+<body>
+<div class='clearfix'>
+<header class='border-bottom'>
+<nav class='clearfix py2'>
+<div class='col col-4 sm-col-3 md-col-2'>
+<div class='sm-ml1'>
+<a class='btn logo relative' href='https://coderwall.com/'>
+<div class='absolute' style='top: 2px'>
+<svg version="1.1" viewBox="0 0 20 20" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="5" cy="5" r="1.4142" fill="#A26FF9"/>
+  <circle cx="10" cy="5" r="1.4142" fill="#A26FF9"/>
+  <circle cx="15" cy="5" r="1.4142" fill="#A26FF9"/>
+  <circle cx="10" cy="10" r="1.4142" fill="#A26FF9"/>
+  <circle cx="15" cy="10" r="1.4142" fill="#A26FF9"/>
+  <circle cx="15" cy="15" r="1.4142" fill="#A26FF9"/>
+</svg>
+
+</div>
+<div class='left font-x-lg' style='padding-left: 35px;'>
+Coderwall
+</div>
+</a>
+</div>
+</div>
+<div class='col col-3 sm-col-6 md-col-8 h6'>
+<a class='btn muted-until-hover xs-hide sm-mr1' href='/t/ruby/popular'>Ruby</a>
+<a class='btn muted-until-hover xs-hide' href='/t/python/popular'>Python</a>
+<a class='btn muted-until-hover xs-hide' href='/t/javascript/popular'>JavaScript</a>
+<a class='btn muted-until-hover xs-hide sm-only-hide' href='/t/web/popular'>Front-End</a>
+<a class='btn muted-until-hover xs-hide sm-only-hide' href='/t/tools/popular'>Tools</a>
+<a class='btn muted-until-hover xs-hide sm-only-hide' href='/t/ios/popular'>iOS</a>
+<div class='btn dropdown' style='margin-top: -3px;'>
+<span class='h3 muted-until-hover'>
+<i class="fa fa-sort-down relative xs-hide" style="top: -2px; margin-right: 2px;"></i>
+</span>
+<span class='muted-until-hover xs-ml3'>
+<span class='xs-hide'>More</span>
+Tips
+</span>
+<div class='dropdown-content bg-white mt1 py1 border z4' style='left:0'>
+<a class='btn py1 muted-until-hover sm-hide' href='/t/ruby/popular'>Ruby</a>
+<a class='btn py1 muted-until-hover sm-hide' href='/t/python/popular'>Python</a>
+<a class='btn py1 muted-until-hover sm-hide' href='/t/javascript/popular'>JavaScript</a>
+<a class='btn py1 muted-until-hover md-hide nowrap' href='/t/web/popular'>Front-End</a>
+<a class='btn py1 muted-until-hover md-hide' href='/t/tools/popular'>Tools</a>
+<a class='btn py1 muted-until-hover md-hide' href='/t/ios/popular'>iOS</a>
+<a class='btn py1 muted-until-hover' href='/t/php/popular'>PHP</a>
+<a class='btn py1 muted-until-hover' href='/t/android/popular'>Android</a>
+<a class='btn py1 muted-until-hover' href='/t/dot-net/popular'>.NET</a>
+<a class='btn py1 muted-until-hover' href='/t/java/popular'>Java</a>
+<a class='btn py1 muted-until-hover green md-hide' href='/jobs'>Jobs</a>
+</div>
+</div>
+<a class='btn border-left xs-hide sm-only-hide' href='/jobs'>
+<div class='green'>Jobs</div>
+</a>
+</div>
+<div class='col col-5 sm-col-3 md-col-2'>
+<div class='right pr2'>
+<a class='btn btn-primary bg-purple white ml1' href='/signin'>Sign In or Up</a>
+</div>
+</div>
+</nav>
+</header>
+
+
+<div class='mt1 px3'>
+
+</div>
+<main>
+<div class='py2 px3'><div class='container protip' id='protip_92881' itemid='basic-vim-commands-for-getting-started' itemscope>
+<div class='hide'><time datetime="2016-02-25T18:51:04Z" itemprop="dateModified">February 25, 2016 18:51</time></div>
+<div class='hide' itemprop='name'>adv71w</div>
+<div class='clearfix'>
+<div class='sm-col sm-col sm-col-12 md-col-8'>
+<div class='clearfix mt0 mb1'>
+<div class='sm-right'>
+<div class='diminish inline mr1'>Last Updated: February 25, 2016</div>
+<span class='xs-hide'>
+&middot;
+<div class='diminish inline mx1'>
+<i class="fa fa-eye"></i>
+29.32K
+</div>
+</span>
+&middot;
+<span class='mx1'><a href="/shiva">shiva</a></span>
+<div class='avatar' itemprop='image' style='background-color: #5a702f;'><img src="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/22876/IMG_1652_small.JPG" alt="Img 1652 small" /></div>
+</div>
+</div>
+<div class='card p1' style='border-top:solid 5px #5a702f'>
+<h1 class='mt4 mb2 center' itemprop='headline'>Basic Vim commands - For getting started</h1>
+<div class='center mr1' itemprop='keywords'>
+<h6 class='diminish inline px1'><a href="/t/vim/popular">vim</a></h6>
+<h6 class='diminish inline px1'><a href="/t/unix/popular">unix</a></h6>
+<h6 class='diminish inline px1'><a href="/t/vi/popular">vi</a></h6>
+<h6 class='diminish inline px1'><a href="/t/commands/popular">commands</a></h6>
+</div>
+<div class='content p3 mt4' itemprop='articleBody'>
+<h1>Started learning to use Vim .. Some simple commands to get started</h1>&#x000A;&#x000A;<h2>Vim has two mode .</h2>&#x000A;&#x000A;<h3>1. Insert mode (Where you can just type like normal text editor. Press i for insert mode)</h3>&#x000A;&#x000A;<h3>2. Command mode (Where you give commands to the editor to get things done . Press ESC for command mode)</h3>&#x000A;&#x000A;<p>Most of them below are in command mode</p>&#x000A;&#x000A;<ul>&#x000A;<li>x -  to delete the unwanted character</li>&#x000A;<li>u  - to undo the last the command and U to undo the whole line</li>&#x000A;<li>CTRL-R to redo </li>&#x000A;<li>A - to append text at the end</li>&#x000A;<li>:wq - to save and exit</li>&#x000A;<li>:q!  - to trash all changes</li>&#x000A;<li>dw - move the cursor to the beginning of the word to delete that word</li>&#x000A;<li>2w - to move the cursor two words forward.</li>&#x000A;<li>3e - to move the cursor to the end of the third word forward.</li>&#x000A;<li>0  (zero) to move to the start of the line.</li>&#x000A;<li>d2w - which deletes 2  words .. number can be changed for deleting the number of consecutive words like d3w</li>&#x000A;<li>dd to delete the line and 2dd to delete to line .number can be changed for deleting the number of consecutive words</li>&#x000A;</ul>&#x000A;&#x000A;<p>The format for a change command is:  operator   [number]   motion<br>&#x000A;-operator - is what to do, such as  d  for delete<br>&#x000A;- [number] - is an optional count to repeat the motion<br>&#x000A;- motion   - moves over the text to operate on, such as  w (word),<br>&#x000A;                  $ (to the end of line), etc.</p>&#x000A;&#x000A;<ul>&#x000A;<li><p>p - puts the previously deleted text after the cursor(Type  dd  to delete the line and store it in a Vim register. and p to put the line)</p></li>&#x000A;<li><p>r - to replace the letter e.g press re to replace the letter with e</p></li>&#x000A;<li><p>ce - to change until the end of a word (place the cursor on the u in lubw it will delete ubw )</p></li>&#x000A;<li><p>ce - deletes the word and places you in Insert mode</p></li>&#x000A;<li><p>G - to move you to the bottom of the file.</p></li>&#x000A;<li><p>gg - to move you to the start of the file.<br>&#x000A;Type the number of the line you were on and then  G</p></li>&#x000A;<li><p>%  to find a matching ),], or }</p></li>&#x000A;<li><p>:s/old/new/g  to substitute 'new' for 'old' where g is globally</p></li>&#x000A;<li><p>/   backward search  n to find the next occurrence and N to search in opposite direction</p></li>&#x000A;<li><p>?   forward search</p></li>&#x000A;<li><p>:!   to run the shell commands like :!dir, :!ls</p></li>&#x000A;<li><p>:w - TEST   (where TEST is the filename you chose.) . Save the file </p></li>&#x000A;<li><p>v  - starts visual mode for selecting the lines and you can perform operation on that like d delete </p></li>&#x000A;<li><p>:r - Filename will insert the content into the current file</p></li>&#x000A;<li><p>R - to replace more than one character</p></li>&#x000A;<li><p>y - operator to copy text using v visual mode and  p  to paste it</p></li>&#x000A;<li><p>yw - (copy)yanks one word</p></li>&#x000A;<li><p>o - opens a line below the cursor and start Insert mode.</p></li>&#x000A;<li><p>O  - opens a line above the cursor.</p></li>&#x000A;<li><p>a  - inserts text after the cursor.</p></li>&#x000A;<li><p>A - inserts text after the end of the line.</p></li>&#x000A;<li><p>e - command moves to the end of a word.</p></li>&#x000A;<li><p>y - operator yanks (copies) text,  p  puts (pastes) it.</p></li>&#x000A;<li><p>R  - enters Replace mode until  &lt;ESC&gt;  is pressed.</p></li>&#x000A;<li><p>ctrl-w to jump from one window to another</p></li>&#x000A;</ul>&#x000A;&#x000A;<p>type  a command :e and press ctrl+D to list all the command name starts with :e and press tab to complete the command</p>
+</div>
+<div class='clearfix mt1 mb3 mx2 py2'>
+<div class='clearfix border-bottom' itemprop='author'>
+<h4>
+Written by
+<a class='bold user' href='/shiva' id='user_22876' itemid='22876' itemscope itemtype='http://schema.org/Person'>
+<span class='blue' itemprop='name'>shiva kumar</span>
+</a>
+</h4>
+</div>
+<div class='clearfix mt1'>
+<div class='btn btn-small pl0 mr1 mb1 xs-block'>
+<script type="application/json" id="js-react-on-rails-context">{"inMailer":false,"i18nLocale":"en","i18nDefaultLocale":"en","href":"https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started","location":"/p/adv71w/basic-vim-commands-for-getting-started","scheme":"https","host":"coderwall.com","port":null,"pathname":"/p/adv71w/basic-vim-commands-for-getting-started","search":null,"httpAcceptLanguage":"en-US,en;q=0.5","pusherKey":"56c8c9e2d013d4e9f315","user":null,"serverSide":false}</script>
+<script type="application/json" class="js-react-on-rails-component" data-component-name="HeartButton" data-dom-id="HeartButton-react-component-2715cf36-2fad-4d72-a47a-52258faaa9a9">{"heartableId":"protip_92881","href":"/p/adv71w/likes","labels":["Recommend","Recommended"]}</script>
+    <div id="HeartButton-react-component-2715cf36-2fad-4d72-a47a-52258faaa9a9"></div>
+    
+
+</div>
+<a class='btn btn-small pl0 mb1 mr1 xs-block' href='http://twitter.com/home?status=Basic+Vim+commands+-+For+getting+started+by+%40ishivakumar%0A%0Ahttps%3A%2F%2Fcoderwall.com%2Fp%2Fadv71w' target='twitter'>
+<span class='fixed-space-4'><i class="fa fa-twitter aqua h4"></i></span>
+<span>Say Thanks</span>
+</a>
+<div class='btn btn-small pl0 mb1 mr1 xs-block'>
+<script type="application/json" class="js-react-on-rails-component" data-component-name="ProtipSubscribeButton" data-dom-id="ProtipSubscribeButton-react-component-d4b7a701-5fe7-4cd1-84ae-8ee41227d024">{}</script>
+    <div id="ProtipSubscribeButton-react-component-d4b7a701-5fe7-4cd1-84ae-8ee41227d024"></div>
+    
+
+</div>
+<a class='btn btn-small pl0 mb1 mr1 xs-block' href='/signup'>
+<span class='fixed-space-4'><i class="fa fa-comment-o black h4"></i></span>
+Respond
+</a>
+</div>
+</div>
+<div class='clearfix'>
+<div class='clearfix mt3 px2'>
+<h4>
+7 Responses
+<div class='right hide'>
+<div class='btn btn-small green'>Add your response</div>
+</div>
+</h4>
+<div class='border-top comment inline-block mb1 py1' id='comment_7694' itemid='7694' itemscope itemtype='http://schema.org/Comment' style='width: 100%'>
+<div class='hide'><time datetime="2013-07-05T11:54:16Z" itemprop="datePublished">July 05, 2013 11:54</time></div>
+<div class='hide' itemprop='name'>7694</div>
+<div class='left mt1 mr2 avatar small' style='background-color: #3f1ceb;'>
+<img src="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/25333/me.jpg" alt="Me" />
+</div>
+<div class='overflow-hidden py0 mt0'>
+<div class='clearfix'>
+<div class='author' itemprop='author'>
+<a class='bold black no-hover' href='/hauleth' itemprop='alternateName'>
+hauleth
+</a>
+</div>
+<div class='content small' itemprop='text'><p>Also nice is <code class="prettyprint">:xa</code> which save and quit all files. In case to use it as <code class="prettyprint">ZZ</code> (save and quit) I have mapped some more:</p>&#x000A;&#x000A;<pre><code class="prettyprint">map ZX :cq " quit and return error (helpful when using Vim with Git)&#x000A;map ZA :qa " quit all buffers&#x000A;map ZS :xa " quit and save all buffers </code></pre></div>
+<div class='diminish mt1'>
+over 1 year ago
+&middot;
+<script type="application/json" class="js-react-on-rails-component" data-component-name="HeartButton" data-dom-id="HeartButton-react-component-2595a257-72c7-4db8-bc2b-e6a50af67c15">{"heartableId":"comment_7694","href":"/comments/7694/likes","labels":["",""]}</script>
+    <div style="display:inline-block" id="HeartButton-react-component-2595a257-72c7-4db8-bc2b-e6a50af67c15"></div>
+    
+
+</div>
+</div>
+</div>
+</div>
+<div class='border-top comment inline-block mb1 py1' id='comment_7698' itemid='7698' itemscope itemtype='http://schema.org/Comment' style='width: 100%'>
+<div class='hide'><time datetime="2013-07-05T12:54:42Z" itemprop="datePublished">July 05, 2013 12:54</time></div>
+<div class='hide' itemprop='name'>7698</div>
+<div class='left mt1 mr2 avatar small' style='background-color: #5a702f;'>
+<img src="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/22876/IMG_1652_small.JPG" alt="Img 1652 small" />
+</div>
+<div class='overflow-hidden py0 mt0'>
+<div class='clearfix'>
+<div class='author' itemprop='author'>
+<a class='bold black no-hover' href='/shiva' itemprop='alternateName'>
+shiva
+</a>
+</div>
+<div class='content small' itemprop='text'><p>Nice .. Thanks <a href="/hauleth">@hauleth</a> :)</p></div>
+<div class='diminish mt1'>
+over 1 year ago
+&middot;
+<script type="application/json" class="js-react-on-rails-component" data-component-name="HeartButton" data-dom-id="HeartButton-react-component-767b8d0d-96f8-4479-8714-5ac5be660457">{"heartableId":"comment_7698","href":"/comments/7698/likes","labels":["",""]}</script>
+    <div style="display:inline-block" id="HeartButton-react-component-767b8d0d-96f8-4479-8714-5ac5be660457"></div>
+    
+
+</div>
+</div>
+</div>
+</div>
+<div class='border-top comment inline-block mb1 py1' id='comment_7737' itemid='7737' itemscope itemtype='http://schema.org/Comment' style='width: 100%'>
+<div class='hide'><time datetime="2013-07-08T10:53:25Z" itemprop="datePublished">July 08, 2013 10:53</time></div>
+<div class='hide' itemprop='name'>7737</div>
+<div class='left mt1 mr2 avatar small' style='background-color: #366b82;'>
+<img src="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/813/8f93a872e399bc1353cc8d4e791d5401.jpeg" alt="8f93a872e399bc1353cc8d4e791d5401" />
+</div>
+<div class='overflow-hidden py0 mt0'>
+<div class='clearfix'>
+<div class='author' itemprop='author'>
+<a class='bold black no-hover' href='/mislav' itemprop='alternateName'>
+mislav
+</a>
+</div>
+<div class='content small' itemprop='text'><p>For beginners/intermediate: <a href="http://mislav.uniqpath.com/2011/12/vim-revisited/" rel="nofollow">Vim Revisited</a> is my article where I present similar information but in a more structured format.</p></div>
+<div class='diminish mt1'>
+over 1 year ago
+&middot;
+<script type="application/json" class="js-react-on-rails-component" data-component-name="HeartButton" data-dom-id="HeartButton-react-component-315992c1-662e-4ceb-aedb-a5ad36ec9479">{"heartableId":"comment_7737","href":"/comments/7737/likes","labels":["",""]}</script>
+    <div style="display:inline-block" id="HeartButton-react-component-315992c1-662e-4ceb-aedb-a5ad36ec9479"></div>
+    
+
+</div>
+</div>
+</div>
+</div>
+<div class='border-top comment inline-block mb1 py1' id='comment_7738' itemid='7738' itemscope itemtype='http://schema.org/Comment' style='width: 100%'>
+<div class='hide'><time datetime="2013-07-08T10:59:03Z" itemprop="datePublished">July 08, 2013 10:59</time></div>
+<div class='hide' itemprop='name'>7738</div>
+<div class='left mt1 mr2 avatar small' style='background-color: #5a702f;'>
+<img src="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/22876/IMG_1652_small.JPG" alt="Img 1652 small" />
+</div>
+<div class='overflow-hidden py0 mt0'>
+<div class='clearfix'>
+<div class='author' itemprop='author'>
+<a class='bold black no-hover' href='/shiva' itemprop='alternateName'>
+shiva
+</a>
+</div>
+<div class='content small' itemprop='text'><p><a href="/mislav">@mislav</a>  i think the links is broken </p></div>
+<div class='diminish mt1'>
+over 1 year ago
+&middot;
+<script type="application/json" class="js-react-on-rails-component" data-component-name="HeartButton" data-dom-id="HeartButton-react-component-a3f12ef7-32e8-4f08-afc8-2b01cc232c11">{"heartableId":"comment_7738","href":"/comments/7738/likes","labels":["",""]}</script>
+    <div style="display:inline-block" id="HeartButton-react-component-a3f12ef7-32e8-4f08-afc8-2b01cc232c11"></div>
+    
+
+</div>
+</div>
+</div>
+</div>
+<div class='border-top comment inline-block mb1 py1' id='comment_7739' itemid='7739' itemscope itemtype='http://schema.org/Comment' style='width: 100%'>
+<div class='hide'><time datetime="2013-07-08T11:00:10Z" itemprop="datePublished">July 08, 2013 11:00</time></div>
+<div class='hide' itemprop='name'>7739</div>
+<div class='left mt1 mr2 avatar small' style='background-color: #366b82;'>
+<img src="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/813/8f93a872e399bc1353cc8d4e791d5401.jpeg" alt="8f93a872e399bc1353cc8d4e791d5401" />
+</div>
+<div class='overflow-hidden py0 mt0'>
+<div class='clearfix'>
+<div class='author' itemprop='author'>
+<a class='bold black no-hover' href='/mislav' itemprop='alternateName'>
+mislav
+</a>
+</div>
+<div class='content small' itemprop='text'><p>Thanks, bad paste. Now fixed</p></div>
+<div class='diminish mt1'>
+over 1 year ago
+&middot;
+<script type="application/json" class="js-react-on-rails-component" data-component-name="HeartButton" data-dom-id="HeartButton-react-component-74d8b221-a9b4-4fd9-8c5a-a0eec1101862">{"heartableId":"comment_7739","href":"/comments/7739/likes","labels":["",""]}</script>
+    <div style="display:inline-block" id="HeartButton-react-component-74d8b221-a9b4-4fd9-8c5a-a0eec1101862"></div>
+    
+
+</div>
+</div>
+</div>
+</div>
+<div class='border-top comment inline-block mb1 py1' id='comment_7770' itemid='7770' itemscope itemtype='http://schema.org/Comment' style='width: 100%'>
+<div class='hide'><time datetime="2013-07-09T22:24:05Z" itemprop="datePublished">July 09, 2013 22:24</time></div>
+<div class='hide' itemprop='name'>7770</div>
+<div class='left mt1 mr2 avatar small' style='background-color: #99064d;'>
+
+</div>
+<div class='overflow-hidden py0 mt0'>
+<div class='clearfix'>
+<div class='author' itemprop='author'>
+<a class='bold black no-hover' href='/cannon10100' itemprop='alternateName'>
+cannon10100
+</a>
+</div>
+<div class='content small' itemprop='text'><p>There's also :x, which contextually saves the current document if changes have been made and exits, or simply exits if no changes have been made. Equivalent to :wq</p></div>
+<div class='diminish mt1'>
+over 1 year ago
+&middot;
+<script type="application/json" class="js-react-on-rails-component" data-component-name="HeartButton" data-dom-id="HeartButton-react-component-bf925bbf-df4d-4816-adc2-e81624d98cbc">{"heartableId":"comment_7770","href":"/comments/7770/likes","labels":["",""]}</script>
+    <div style="display:inline-block" id="HeartButton-react-component-bf925bbf-df4d-4816-adc2-e81624d98cbc"></div>
+    
+
+</div>
+</div>
+</div>
+</div>
+<div class='border-top comment inline-block mb1 py1' id='comment_7782' itemid='7782' itemscope itemtype='http://schema.org/Comment' style='width: 100%'>
+<div class='hide'><time datetime="2013-07-10T18:10:37Z" itemprop="datePublished">July 10, 2013 18:10</time></div>
+<div class='hide' itemprop='name'>7782</div>
+<div class='left mt1 mr2 avatar small' style='background-color: #00942a;'>
+<img src="https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/74292/248b6f580a5a1d359c8507f82c16a2cb.jpg" alt="248b6f580a5a1d359c8507f82c16a2cb" />
+</div>
+<div class='overflow-hidden py0 mt0'>
+<div class='clearfix'>
+<div class='author' itemprop='author'>
+<a class='bold black no-hover' href='/plenty' itemprop='alternateName'>
+plenty
+</a>
+</div>
+<div class='content small' itemprop='text'><p>As a relatively new vim user, I'm also glad to be repeatedly exposed to command lists such as this. It really helps.<br>&#x000A;I recommend new users go pimp out there vim with the plugins ASAP to get a better impression of its coolness. <br>&#x000A;Me, I hooked up to this fellas github &amp; followed his README to get a great series of bundles that all auto-install &amp; bring colour &amp; interest.<br>&#x000A;<a href="https://github.com/gezpage/dotfiles" rel="nofollow">https://github.com/gezpage/dotfiles</a></p></div>
+<div class='diminish mt1'>
+over 1 year ago
+&middot;
+<script type="application/json" class="js-react-on-rails-component" data-component-name="HeartButton" data-dom-id="HeartButton-react-component-09eae6af-bc5e-4ab2-8df1-2241dc51bd80">{"heartableId":"comment_7782","href":"/comments/7782/likes","labels":["",""]}</script>
+    <div style="display:inline-block" id="HeartButton-react-component-09eae6af-bc5e-4ab2-8df1-2241dc51bd80"></div>
+    
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class='sm-col sm-col sm-col-12 md-col-4'>
+<div class='clearfix sm-ml3 mt3 p1 pb3'>
+<h5 class='mt0 mb1'>
+<i class="fa fa-folder-o mr1"></i>
+Filed Under
+</h5>
+<hr>
+<div class='topic clearfix py1'>
+<a href='/t/tools/popular'>
+<div class='bold'><span class="translation_missing" title="translation missing: en.categories.long.tools">Tools</span></div>
+</a>
+</div>
+<div class='topic clearfix py1'>
+<a href='/t/vim/popular'>
+<div class='bold'>Conquer Code in Vim With 4 Keystrokes or Less</div>
+</a>
+</div>
+</div>
+<script type="application/json" id="js-react-on-rails-context">{"inMailer":false,"i18nLocale":"en","i18nDefaultLocale":"en","href":"https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started","location":"/p/adv71w/basic-vim-commands-for-getting-started","scheme":"https","host":"coderwall.com","port":null,"pathname":"/p/adv71w/basic-vim-commands-for-getting-started","search":null,"httpAcceptLanguage":"en-US,en;q=0.5","pusherKey":"56c8c9e2d013d4e9f315","user":null,"serverSide":false}</script>
+<script type="application/json" class="js-react-on-rails-component" data-component-name="Sponsors" data-dom-id="Sponsors-react-component-4019b161-42e5-4b0e-8906-79671e8099c6">{}</script>
+    <div id="Sponsors-react-component-4019b161-42e5-4b0e-8906-79671e8099c6"></div>
+    
+
+<div class='clearfix sm-ml3 mt3 p1'>
+<div class='clearfix'>
+<div class='col col-7'>
+<h5 class='mt0'>
+<i class="fa fa-diamond mr1"></i>
+Awesome Job
+</h5>
+</div>
+<div class='col col-5'>
+<div class='right font-sm bold'>
+<a class='block' href='/jobs'>
+See All Jobs
+<i class="fa fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<hr>
+<div class='clearfix py1'>
+<a class='link no-hover mt2' ga-event-action='Protip Sidebar - Featured Job' ga-event-category='Jobs' ga-event-label='Minddistrict Development B.V. - 95d50328-5be8-11e7-8425-0f266b964ce9' href='http://minddistrict.homerun.co/devops-engineer/en/' rel='nofollow' target='_blank'>
+<div class='col col-3 md-col-2'>
+<img class="" src="//github-jobs.s3.amazonaws.com/5a874718-5be8-11e7-8362-5e6c5f9a8663.png" alt="5a874718 5be8 11e7 8362 5e6c5f9a8663" />
+</div>
+<div class='overflow-hidden pl2'>
+<div class='blue bold'>
+DevOps Engineer
+</div>
+<div class='font-sm black'>
+<div class='inline'><a rel="nofollow" target="_blank" ga-event-category="Jobs" ga-event-action="Protip Sidebar - Featured Job" ga-event-label="Minddistrict Development B.V. - 95d50328-5be8-11e7-8425-0f266b964ce9" href="https://www.minddistrict.com/">Minddistrict De...</a></div>
+&middot;
+<div class='inline'>Amsterdam or Rotterdam</div>
+&middot;
+<div class='inline'>Full Time</div>
+</div>
+</div>
+</a>
+</div>
+
+<div class='mt2 font-sm'>
+<a class='border--green green bold' href='https://coderwall.com/jobs/new'>
+Post a job for only
+$299
+</a>
+</div>
+</div>
+<div class='clearfix ml3 mt4' ga-location='Protip Sidebar'>
+<div class='bsarocks bsap_74f50e679004d8f4d62fec4b0f74ccf1' id='bsap_1305410'></div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'></script>
+</div>
+</main>
+<footer class='border-top'>
+<nav class='clearfix'>
+<div class='col col-4 py1 mt1'>
+<a class='btn' href='https://twitter.com/coderwall' target='_blank'>
+@coderwall
+<i class="fa fa-twitter fa-1x ml1"></i>
+</a>
+</div>
+<div class='col col-8 py2 mt1'>
+<div class='right'>
+<a class='inline-block ml1' href='https://github.com/coderwall/coderwall-next' rel='nofollow'>
+<i class="fa fa-github-alt"></i>
+</a>
+<a class='inline-block ml1' href='/t/hackerdesk/popular'>
+<div class='sm-show'><i class="fa fa-gift"></i></div>
+</a>
+<a class='inline-block ml1 mr1' href='mailto:support@coderwall.com'>
+Contact
+</a>
+<a class='inline-block mr1' href='/privacy_policy'>Privacy</a>
+<a class='inline-block mr1' href='/tos'>Terms</a>
+<p class='inline-block diminish inline mr1'>Copyright 2017</p>
+</div>
+</div>
+</nav>
+</footer>
+</div>
+<script type="application/json" data-js-react-on-rails-store="store">{"currentUser":{"item":null},"currentProtip":{"item":{"id":92881,"body":"# Started learning to use Vim .. Some simple commands to get started \r\n##Vim has two mode .\r\n###1. Insert mode (Where you can just type like normal text editor. Press i for insert mode)\r\n###2. Command mode (Where you give commands to the editor to get things done . Press ESC for command mode)\r\n\r\nMost of them below are in command mode\r\n\r\n- x -  to delete the unwanted character\r\n- u  - to undo the last the command and U to undo the whole line\r\n- CTRL-R to redo \r\n- A - to append text at the end\r\n- :wq - to save and exit\r\n- :q!  - to trash all changes\r\n- dw - move the cursor to the beginning of the word to delete that word\r\n- 2w - to move the cursor two words forward.\r\n- 3e - to move the cursor to the end of the third word forward.\r\n- 0  (zero) to move to the start of the line.\r\n- d2w - which deletes 2  words .. number can be changed for deleting the number of consecutive words like d3w\r\n- dd to delete the line and 2dd to delete to line .number can be changed for deleting the number of consecutive words\r\n\r\nThe format for a change command is:  operator   [number]   motion\r\n-operator - is what to do, such as  d  for delete\r\n- [number] - is an optional count to repeat the motion\r\n- motion   - moves over the text to operate on, such as  w (word),\r\n                  $ (to the end of line), etc.\r\n\r\n- p - puts the previously deleted text after the cursor(Type  dd  to delete the line and store it in a Vim register. and p to put the line)\r\n\r\n- r - to replace the letter e.g press re to replace the letter with e\r\n\r\n- ce - to change until the end of a word (place the cursor on the u in lubw it will delete ubw )\r\n- ce - deletes the word and places you in Insert mode\r\n\r\n- G - to move you to the bottom of the file.\r\n\r\n- gg - to move you to the start of the file.\r\nType the number of the line you were on and then  G\r\n- %  to find a matching ),], or }\r\n\r\n- :s/old/new/g  to substitute 'new' for 'old' where g is globally\r\n\r\n- /   backward search  n to find the next occurrence and N to search in opposite direction\r\n- ?   forward search\r\n- :!   to run the shell commands like :!dir, :!ls\r\n- :w - TEST   (where TEST is the filename you chose.) . Save the file \r\n- v  - starts visual mode for selecting the lines and you can perform operation on that like d delete \r\n- :r - Filename will insert the content into the current file\r\n- R - to replace more than one character\r\n- y - operator to copy text using v visual mode and  p  to paste it\r\n- yw - (copy)yanks one word\r\n\r\n- o - opens a line below the cursor and start Insert mode.\r\n- O  - opens a line above the cursor.\r\n- a  - inserts text after the cursor.\r\n- A - inserts text after the end of the line.\r\n- e - command moves to the end of a word.\r\n- y - operator yanks (copies) text,  p  puts (pastes) it.\r\n- R  - enters Replace mode until    is pressed.\r\n\r\n- ctrl-w to jump from one window to another\r\n\r\ntype  a command :e and press ctrl+D to list all the command name starts with :e and press tab to complete the command","created_at":"2013-07-05T07:10:52.409Z","heartableId":"protip_92881","hearts":61,"html":"\u003ch1\u003eStarted learning to use Vim .. Some simple commands to get started\u003c/h1\u003e\n\n\u003ch2\u003eVim has two mode .\u003c/h2\u003e\n\n\u003ch3\u003e1. Insert mode (Where you can just type like normal text editor. Press i for insert mode)\u003c/h3\u003e\n\n\u003ch3\u003e2. Command mode (Where you give commands to the editor to get things done . Press ESC for command mode)\u003c/h3\u003e\n\n\u003cp\u003eMost of them below are in command mode\u003c/p\u003e\n\n\u003cul\u003e\n\u003cli\u003ex -  to delete the unwanted character\u003c/li\u003e\n\u003cli\u003eu  - to undo the last the command and U to undo the whole line\u003c/li\u003e\n\u003cli\u003eCTRL-R to redo \u003c/li\u003e\n\u003cli\u003eA - to append text at the end\u003c/li\u003e\n\u003cli\u003e:wq - to save and exit\u003c/li\u003e\n\u003cli\u003e:q!  - to trash all changes\u003c/li\u003e\n\u003cli\u003edw - move the cursor to the beginning of the word to delete that word\u003c/li\u003e\n\u003cli\u003e2w - to move the cursor two words forward.\u003c/li\u003e\n\u003cli\u003e3e - to move the cursor to the end of the third word forward.\u003c/li\u003e\n\u003cli\u003e0  (zero) to move to the start of the line.\u003c/li\u003e\n\u003cli\u003ed2w - which deletes 2  words .. number can be changed for deleting the number of consecutive words like d3w\u003c/li\u003e\n\u003cli\u003edd to delete the line and 2dd to delete to line .number can be changed for deleting the number of consecutive words\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cp\u003eThe format for a change command is:  operator   [number]   motion\u003cbr\u003e\n-operator - is what to do, such as  d  for delete\u003cbr\u003e\n- [number] - is an optional count to repeat the motion\u003cbr\u003e\n- motion   - moves over the text to operate on, such as  w (word),\u003cbr\u003e\n                  $ (to the end of line), etc.\u003c/p\u003e\n\n\u003cul\u003e\n\u003cli\u003e\u003cp\u003ep - puts the previously deleted text after the cursor(Type  dd  to delete the line and store it in a Vim register. and p to put the line)\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003er - to replace the letter e.g press re to replace the letter with e\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003ece - to change until the end of a word (place the cursor on the u in lubw it will delete ubw )\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003ece - deletes the word and places you in Insert mode\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eG - to move you to the bottom of the file.\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003egg - to move you to the start of the file.\u003cbr\u003e\nType the number of the line you were on and then  G\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e%  to find a matching ),], or }\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e:s/old/new/g  to substitute 'new' for 'old' where g is globally\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e/   backward search  n to find the next occurrence and N to search in opposite direction\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e?   forward search\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e:!   to run the shell commands like :!dir, :!ls\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e:w - TEST   (where TEST is the filename you chose.) . Save the file \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003ev  - starts visual mode for selecting the lines and you can perform operation on that like d delete \u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003e:r - Filename will insert the content into the current file\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eR - to replace more than one character\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003ey - operator to copy text using v visual mode and  p  to paste it\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eyw - (copy)yanks one word\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eo - opens a line below the cursor and start Insert mode.\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eO  - opens a line above the cursor.\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003ea  - inserts text after the cursor.\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eA - inserts text after the end of the line.\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003ee - command moves to the end of a word.\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003ey - operator yanks (copies) text,  p  puts (pastes) it.\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003eR  - enters Replace mode until  \u0026lt;ESC\u0026gt;  is pressed.\u003c/p\u003e\u003c/li\u003e\n\u003cli\u003e\u003cp\u003ectrl-w to jump from one window to another\u003c/p\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cp\u003etype  a command :e and press ctrl+D to list all the command name starts with :e and press tab to complete the command\u003c/p\u003e\n","public_id":"adv71w","subscribed":false,"tags":["vim","unix","vi","commands"],"title":"Basic Vim commands - For getting started","upvotes":61}},"comments":{"items":[{"id":7694,"hearts":2,"heartableId":"comment_7694"},{"id":7698,"hearts":0,"heartableId":"comment_7698"},{"id":7737,"hearts":1,"heartableId":"comment_7737"},{"id":7738,"hearts":0,"heartableId":"comment_7738"},{"id":7739,"hearts":0,"heartableId":"comment_7739"},{"id":7770,"hearts":1,"heartableId":"comment_7770"},{"id":7782,"hearts":1,"heartableId":"comment_7782"}]}}</script>
+  <script>
+    // perfectaudience
+    (function () {
+        window._pa = window._pa || {};
+        var pa = document.createElement('script');
+        pa.type = 'text/javascript';
+        pa.async = true;
+        pa.src = ('https:' == document.location.protocol ? 'https:' : 'http:') + "//tag.perfectaudience.com/serve/50775e2d30a1d50002000221.js";
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(pa, s);
+    })();    
+  </script>
+
+</body>
+</html>
+ç_½³le      YfxmYf{ô=÷±D       F    :https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started necko:classified 1 strongly-framed 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAQAAgAAAAAAAAAAAAAAAAAAAAAB4vFIJp5wRkeyPxAQ9RJGKPqbqVvKO0mKuIl8ec8o/uhmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAARjMIIEXzCCA0egAwIBAgIQDLT7kIxV8UgIU+poLhIBEzANBgkqhkiG9w0BAQsFADBGMQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRUwEwYDVQQLEwxTZXJ2ZXIgQ0EgMUIxDzANBgNVBAMTBkFtYXpvbjAeFw0xNjA5MTQwMDAwMDBaFw0xNzEwMTQxMjAwMDBaMBgxFjAUBgNVBAMTDWNvZGVyd2FsbC5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0CKRYnOgZW0veci8H9boWF8obD4kG6Yaer0+kHFel3PdtK/6p/z5ZiuAkHc3CAFReUFXbidu3cMw7Zb5k9rnD24YtM2wiP3AsoDmX0lt1QOJYT+bbcYeSffB7B1Lp9a/G1IRntUJm7SBMA+GAzU5vEDL4dGBLz9MrY4HJssXWK9f1tzpDik2XwS2mMxUmWTwiOeG2vJLyDXIplDF692DsUQJywNWdWRvqh9nMcopbA7g5PuuFn0apAljV3HfSXlROi3vO6YusoU256+lhXGR8YNoxfNeT8EeIPJMPSFLk0M2mZKTf2yXcapnbjIzYLGJ2MMd9sdVNkGh4QWrllNd9AgMBAAGjggF1MIIBcTAfBgNVHSMEGDAWgBRZpGYGUqB7lZI8o5QHJ5Z0W/k90DAdBgNVHQ4EFgQUVxaBhVouehlVg8pUt4WW2Geq9fcwKQYDVR0RBCIwIIINY29kZXJ3YWxsLmNvbYIPKi5jb2RlcndhbGwuY29tMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwOwYDVR0fBDQwMjAwoC6gLIYqaHR0cDovL2NybC5zY2ExYi5hbWF6b250cnVzdC5jb20vc2NhMWIuY3JsMBMGA1UdIAQMMAowCAYGZ4EMAQIBMHUGCCsGAQUFBwEBBGkwZzAtBggrBgEFBQcwAYYhaHR0cDovL29jc3Auc2NhMWIuYW1hem9udHJ1c3QuY29tMDYGCCsGAQUFBzAChipodHRwOi8vY3J0LnNjYTFiLmFtYXpvbnRydXN0LmNvbS9zY2ExYi5jcnQwDAYDVR0TAQH/BAIwADANBgkqhkiG9w0BAQsFAAOCAQEAk3Ejty1fGVfUVX2XeviJ7eTQKxgnFa/jY29PxFX0bZfuX70JwWNRQ1Mu1bv+14fZoyOIqp7D2n0UYVw6hK5fuL3dxa+Ebkv52tb/pRg22egRqvrMTsF6ajElgq8eFsfCasU9l0eH9sZ/mW2jxOgXdJZfwdiNWKvOf/TvJ6pNwmKynCrzhg5N76AX8axAcEoiqYzfn6NOBY5y//OoSXXTKQqwOeHOcr9iSwyq5whTBmjNwWvzXDNAudGoIrq2CR+UfYxtKONU0kOrpKZVeGc9uhe5NKj9D+vzxSiNeh2DFcNyFj4zp1+aHn18uIh9LdDi9dG0UlKdOBUJzNBaUtdna8AvAAMAAAAAAQEAAA== request-method GET response-head HTTP/1.1 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: text/html; charset=utf-8
+Date: Wed, 12 Jul 2017 19:28:45 GMT
+Etag: W/"9267c3e9143750c28cae7f72cd27e064"
+Last-Modified: Thu, 25 Feb 2016 18:51:04 GMT
+Lens-Latency: 0
+Lens-Origin-Latency: 77
+Server: Aleph/0.4.4
+Via: 1.1 vegur
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 3de94f33-50c9-47ad-8e9a-9495f6c73c72
+X-Runtime: 0.068148
+X-XSS-Protection: 1; mode=block
+Content-Length: 41265
+ original-response-headers Cache-Control: max-age=0, private, must-revalidate
+Content-Type: text/html; charset=utf-8
+Date: Wed, 12 Jul 2017 19:28:45 GMT
+Etag: W/"9267c3e9143750c28cae7f72cd27e064"
+Last-Modified: Thu, 25 Feb 2016 18:51:04 GMT
+Lens-Latency: 0
+Lens-Origin-Latency: 77
+Server: Aleph/0.4.4
+Set-Cookie: viewd_protips=adv71w; path=/; expires=Wed, 12 Jul 2017 19:38:45 -0000
+Set-Cookie: _coderwall-next_session=MkZkanFORG51dVdHYUxUcTJIZ1ZmZXlMN2VnQXJ6cmM3UmY4OC9xMlY0OVJtT1hQOUQwQ0cvZjEvaUZhQzk1WXA4c2RwZnJlek9lWW1CSXVqSE1LSCtnUUd4em81NitMYmIyN1FDWTN6RG9JUFYrL0g5R2hYSUVuaHczMkpaZGdRU21kMHVuZ3E2N210QXlmZ1FnZTFWSENFdDFpRnJhTzdvcUNBZ05kQk9jVURnMlFsZUFPV3BUYnd2cm1Db3I4bkZtVTV4ZmNDN3RJQmV6RHlDeFQyUWVtdlBKZkRTTlgxcnh4REoyOWdYZz0tLThBNGJFTHNXMHpndVM1N3pyZEd0MlE9PQ%3D%3D--f5aea807fc173b95322e301441f1a1f51413a051; path=/; expires=Fri, 12 Jul 2019 19:28:45 -0000; HttpOnly
+Via: 1.1 vegur
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 3de94f33-50c9-47ad-8e9a-9495f6c73c72
+X-Runtime: 0.068148
+X-XSS-Protection: 1; mode=block
+Content-Length: 41265
+Connection: keep-alive
+ charset UTF-8 uncompressed-len 0 predictor::resource-count 43 predictor::https://d1ujcb8mxkwm85.cloudfront.net/assets/application_static-8cd0567f17b372fd07cb9de3659f01a06b0ac69ab55f9c66d395f0b8ebfe2180.css 1,1,1499887725,12288 predictor::https://d1ujcb8mxkwm85.cloudfront.net/assets/application_static-df7a040d64fc527786b488987b70e4696685067d41998c7e0acda504beb4e768.js 1,1,1499887725,12288 predictor::https://content.jwplatform.com/libraries/pEaCoeG7.js 1,1,1499887725,12288 predictor::https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/22876/IMG_1652_small.JPG 1,1,1499887725,12288 predictor::https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/25333/me.jpg 1,1,1499887725,12288 predictor::https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/813/8f93a872e399bc1353cc8d4e791d5401.jpeg 1,1,1499887725,12288 predictor::https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/74292/248b6f580a5a1d359c8507f82c16a2cb.jpg 1,1,1499887725,12288 predictor::https://github-jobs.s3.amazonaws.com/5a874718-5be8-11e7-8362-5e6c5f9a8663.png 1,1,1499887725,12288 predictor::https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js 1,1,1499887725,12288 predictor::https://www.google-analytics.com/analytics.js 1,1,1499887725,12288 predictor::https://s3.buysellads.com/ac/bsa.js 1,1,1499887725,12288 predictor::https://d1ujcb8mxkwm85.cloudfront.net/assets/font-awesome/fontawesome-webfont-ff82aeed6b9bb6701696c84d1b223d2e682eb78c89117a438ce6cfea8c498995.woff2?v=4.5.0 1,1,1499887725,12288 predictor::https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.css 1,1,1499887725,12288 predictor::https://tag.perfectaudience.com/serve/50775e2d30a1d50002000221.js 1,1,1499887725,12288 predictor::https://www.google-analytics.com/r/collect?v=1&_v=j56&a=1463288979&t=pageview&_s=1&dl=https%3A%2F%2Fcoderwall.com%2Fp%2Fadv71w%2Fbasic-vim-commands-for-getting-started&dr=https%3A%2F%2Fwww.google.com%2F&ul=en-us&de=UTF-8&dt=Basic%20Vim%20commands%20-%20For%20getting%20started%20(Example)&sd=24-bit&sr=1920x1080&vp=1270x819&je=0&_u=aEBAAEABI~&jid=447799619&gjid=1259534701&cid=1602023769.1499887727&tid=UA-797907-8&_gid=2122840445.1499887727&_r=1&z=1384867179 1,1,1499887725,8192 predictor::https://s3.buysellads.com/r/s_74f50e679004d8f4d62fec4b0f74ccf1.js?v=1499886000000 1,1,1499887725,12288 predictor::https://pixel-geo.prfct.co/tagjs?a_id=7619&source=js_tag 1,1,1499887725,12288 predictor::https://assets.servedby-buysellads.com/p/manage/asset/id/57146 1,1,1499887725,8192 predictor::https://www.launchbit.com/taz-pixel/11384-6916-111 1,1,1499887725,8192 predictor::https://assets.servedby-buysellads.com/p/manage/asset/id/57227 1,1,1499887725,8192 predictor::https://slack.sp1.convertro.com/view/vt/v1/slack/0/cvo.gif?cvosrc=display.carbon.two%20cpc&utm_source=carbon&utm_medium=display&utm_campaign=two%20cpc 1,1,1499887725,8192 predictor::https://569-img.c3tag.com/v.gif?cid=569&c3ch=Carbon%20Networks&c3nid=Two%20CPC 1,1,1499887725,8192 predictor::https://s3.buysellads.com/ac/pro.js 1,1,1499887725,12288 predictor::https://srv.buysellads.com/ads/get/ids/CVADVK7E/?r=1499886000000 1,1,1499887725,12288 predictor::https://pixel-geo.prfct.co/cs/?partnerId=mrin 1,1,1499887725,8192 predictor::https://pixel-geo.prfct.co/cs/?partnerId=twtr 1,1,1499887725,8192 predictor::https://pixel-geo.prfct.co/cs/?partnerId=crw 1,1,1499887725,8192 predictor::https://pixel-geo.prfct.co/cs/?partnerId=yah 1,1,1499887725,8192 predictor::https://pixel-geo.prfct.co/cs/?partnerId=opx 1,1,1499887725,8192 predictor::https://pixel-geo.prfct.co/cs/?partnerId=pub 1,1,1499887725,8192 predictor::https://pixel-geo.prfct.co/cs/?partnerId=rbcn 1,1,1499887725,8192 predictor::https://pixel-geo.prfct.co/cs/?partnerId=goo 1,1,1499887725,8192 predictor::https://pixel-geo.prfct.co/seg/?add=438977,1798694,5419153,5419156,5419154,5419157,5419155,5419158&source=js_tag&a_id=7619 1,1,1499887725,8192 predictor::https://secure.adnxs.com/seg?t=2&add=5419158 1,1,1499887725,8192 predictor::https://secure.adnxs.com/seg?t=2&add=5419155 1,1,1499887725,8192 predictor::https://secure.adnxs.com/seg?t=2&add=5419157 1,1,1499887725,8192 predictor::https://secure.adnxs.com/seg?t=2&add=5419154 1,1,1499887725,8192 predictor::https://secure.adnxs.com/seg?t=2&add=5419156 1,1,1499887725,8192 predictor::https://secure.adnxs.com/seg?t=2&add=5419153 1,1,1499887725,8192 predictor::https://secure.adnxs.com/seg?t=2&add=1798694 1,1,1499887725,8192 predictor::https://secure.adnxs.com/seg?t=2&add=438977 1,1,1499887725,8192 predictor::https://www.google-analytics.com/r/collect?v=1&_v=j56&a=1362023636&t=pageview&_s=1&dl=https%3A%2F%2Fcoderwall.com%2Fp%2Fadv71w%2Fbasic-vim-commands-for-getting-started&ul=en-us&de=UTF-8&dt=Basic%20Vim%20commands%20-%20For%20getting%20started%20(Example)&sd=24-bit&sr=1920x1080&vp=1014x576&je=0&_u=QACAAEABI~&jid=1147834643&gjid=2103267650&cid=1602023769.1499887727&tid=UA-797907-8&_gid=2122840445.1499887727&_r=1&z=497588100 1,1,1499887725,4096 predictor::https://js-agent.newrelic.com/nr-1044.min.js 1,1,1499887725,4096   ¡1

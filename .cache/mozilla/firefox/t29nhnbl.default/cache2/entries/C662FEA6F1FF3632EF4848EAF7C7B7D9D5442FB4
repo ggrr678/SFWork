@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if IE 9]>
+<html class="ie ie9" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8) | !(IE 9)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>SFTP Using Command Line(UNIX, Mac OS X) | IT Services | USC</title>
+<link rel="icon" href="https://itservices.usc.edu/wp-content/themes/it-services-2017/images/favicon.ico" />
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://itservices.usc.edu/xmlrpc.php" />
+
+<link rel='dns-prefetch' href='//s.w.org' />
+
+			<script type="text/javascript">//<![CDATA[
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-584548-1');
+			ga('send', 'pageview');	
+			ga('create', 'UA-584548-5', {'name': 'newTracker2'});ga('newTracker2.send', 'pageview');
+			//]]></script>
+
+					<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/itservices.usc.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='usc-starter-style-css'  href='https://itservices.usc.edu/wp-content/themes/it-services-2017/css/usc-it-services.css?ver=2.7.0' type='text/css' media='screen,print' />
+<script type='text/javascript' src='https://itservices.usc.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://itservices.usc.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='https://itservices.usc.edu/wp-json/' />
+<link rel="canonical" href="https://itservices.usc.edu/sftp/cline/" />
+<link rel='shortlink' href='https://itservices.usc.edu/?p=596' />
+<link rel="alternate" type="application/json+oembed" href="https://itservices.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fitservices.usc.edu%2Fsftp%2Fcline%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://itservices.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fitservices.usc.edu%2Fsftp%2Fcline%2F&#038;format=xml" />
+<script type="text/javascript" src="//use.typekit.net/bht7dnl.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+
+<body class="page-template-default page page-id-596 page-child parent-pageid-593">
+<div class="site-wrapper">
+
+	<header id="masthead" class="site-header" role="banner">
+
+		
+		<div class="site-branding-wrapper">
+			<div class="site-branding">
+				<h1 class="brand-title"><a href="http://www.usc.edu">University of Southern California</a></h1>
+				<h2 class="site-title"><a href="https://itservices.usc.edu/" rel="home">IT Services</a></h2>
+							</div><!-- .site-branding -->
+		</div><!-- .site-branding-wrapper -->
+
+		<div class="site-navigation-wrapper">
+			<nav id="site-navigation" class="site-navigation" role="navigation">
+				<h2 class="menu-toggle">Main Navigation</h2>
+				<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+				<a class="skip-link screen-reader-text" href="#secondary">Skip to secondary content</a>
+				<div class="menu-main-navigation-container"><ul id="menu-main-navigation" class="site-nav"><li id="menu-item-4870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4870"><a href="https://itservices.usc.edu/services/" >Services</a></li>
+<li id="menu-item-4875" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4875"><a href="https://itservices.usc.edu/security/" >Information Security</a></li>
+<li id="menu-item-10426" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10426"><a href="http://itsalerts.usc.edu/" >Alerts</a></li>
+<li id="menu-item-15019" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15019"><a href="https://itservices.usc.edu/new/" >Whatâ€™s New</a></li>
+<li id="menu-item-10314" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10314"><a href="https://itservices.usc.edu/about/" >About</a></li>
+</ul></div>			</nav><!-- .site-navigation -->
+		</div><!-- .site-navigation-wrapper -->
+
+		<div class="site-search-wrapper">
+			<div class="site-content-wrapper">
+				<aside class="module-search-bar">
+	<h1 class="section-title">Search</h1>
+		<form class="search-form" role="search" id="search-form" method="get" action="https://itservices.usc.edu/search">
+	<div class="search-field-wrapper">
+		<input name="hq" type="hidden" value="site:itservices.usc.edu" />
+		<input name="ql" type="hidden" value="2" />
+		<input id="q" name="q" type="text" class="search-field" placeholder="Search ITS" title="search" />
+	</div><!-- .search-field-wrapper -->
+	<button type="submit" class="search-submit">Search</button>
+</form>
+</aside><!-- .module-search-bar -->							</div><!-- .site-content-wrapper -->
+		</div><!-- .site-search-wrapper -->
+
+	</header><!-- #masthead -->
+
+										<div class="breadcrumbs-wrapper">
+					<div class="site-content-wrapper">
+						<ul id="breadcrumbs" class="breadcrumbs"><li><a href="https://itservices.usc.edu/">Home</a></li><li><a href="https://itservices.usc.edu/sftp/">Secure File Transfer (SFTP and SCP)</a></li><li class="current">SFTP Using Command Line(UNIX, Mac OS X)</li></ul>					</div><!-- .site-content-wrapper -->
+				</div>
+					
+		<div id="content" class="site-content-wrapper">
+
+	
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			
+				
+				
+<article id="post-596" class="post-596 page type-page status-publish hentry">
+	<header class="entry-header">
+		<h1 class="entry-title">SFTP Using Command Line(UNIX, Mac OS X)</h1>
+		<time datetime="2015-11-30T09:54:50-07:00">
+		Last modified: November 30, 2015		</time>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+				<p>This page contains instructions on how to transfer files between two computers connected to the Internet using the SFTP utility in UNIX. This utility allows you to transfer both ASCII and binary files between computers quickly and efficiently.</p>
+<h2>Getting Started</h2>
+<p>Before you can perform any action using the SFTP utility, you must connect and log in to the remote host (the computer or server you wish to transfer files to or from).</p>
+<p>To log in to the remote host:</p>
+<ol>
+<li>Bring up a UNIX prompt and type <strong>sftp USC <em>username@usc-host</em></strong>.
+<li>Use your USC username and password to log in to the remote host. The <strong>sftp&gt;</strong> prompt displays.
+          </ol>
+<h2>Issuing Commands on the Remote and Local Hosts</h2>
+<p>Use standard file and directory UNIX commands at the <strong>sftp&gt;</strong> prompt. For example, on the remote host, you can use <strong>ls</strong> to get a listing of the current directory, <strong>ls -l</strong> to get a long listing, or <strong>cd</strong> to move to a different directory.</p>
+<p>To issue commands on the local host (your computer), use standard file and directory UNIX commands as when you are issuing commands on the remote host. However, you will need to begin each command with an exclamation mark (!). Your starting local or working directory is specified as the default incoming and outgoing directory.</p>
+<p>If you want to receive files in, or send files from, a directory other than your starting working directory, you will need to specify the directory. For example, if you want to download all files to a folder called <strong>INCOMING</strong> on your local directory, you first have to create that folder with the <strong>! mkdir</strong> UNIX command, and then you need to use the <strong>lcd</strong> command to change to that new folder. Here is the syntax for this example:</p>
+<ul><strong>sftp&gt; ! mkdir INCOMING</strong></ul>
+<ul><strong>sftp&gt; ! lcd INCOMING</strong></ul>
+<p>For a more detailed explanation of other UNIX commands, visit <a href="/unix/commands">UNIX Commands and Utilities</a>.</p>
+<h2>Using Command Line for SFTP</h2>
+<p>To download a file from a remote host:</p>
+<ol>
+<li>Once you are pointing to the correct directory on the remote host, use the <strong>get</strong> command to copy a file to the local directory (on your computer).
+<li>Type <strong>get <em>filename</em></strong> at the <strong>sftp&gt;</strong> prompt, and then press <strong>Enter</strong>.
+<li>The file is copied to your local directory.
+          </ol>
+<p>To upload a file to a remote host:</p>
+<ol>
+<li>Once you are pointing to the correct directory on the remote host, use the <strong>put</strong> command to copy a file from the local directory (on your computer).
+<li>Type <strong>put <em>local-path-to-file remote-path</em></strong> at the <strong>sftp&gt;</strong> prompt, and then press <strong>Enter</strong>.
+<li>The file is copied to the remote host.
+          </ol>
+<p>To quit SFTP:</p>
+<ol>
+<li>At the <strong>sftp&gt;</strong> prompt, type <strong>quit</strong>.
+<li>The connection closes, and you return to the UNIX prompt.
+          </ol>
+<p>To get help:</p>
+<ol>
+<li>At the <strong>sftp&gt;</strong> prompt, type <strong>?</strong>. A list of all available commands will display.
+<li>At the <strong>sftp&gt;</strong> prompt type <strong>? <em>&lt;command&gt;</em></strong>. This will return brief information on that particular command.
+          </ol>
+<h2>Getting Help</h2>
+<p>For additional assistance, please contact the <a href="/contact">ITS Customer Support Center</a>.</p>
+			</div><!-- .entry-content -->
+	</article><!-- #post-## -->
+	
+					
+			
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<div id="secondary" class="site-sidebar" role="complementary">
+		
+				
+				
+							
+				
+												<nav class="content-sidebar widget menu-sidebar">					<header><h1 class="section-title">Secure File Transfer (SFTP) Documentation</h1></header>
+					<ul>
+<li><a href="/sftp/">Overview</a></li>
+<li><a href="/sftp/cline/">SFTP using Command Line</a></li>
+<li><a href="/sftp/fetch/">SFTP using Fetch</a></li>
+<li><a href="/sftp/filezilla/">SFTP using FileZilla</a></li>
+</ul>
+									</nav>								
+	</div><!-- #secondary -->
+
+			</div><!-- .site-content-wrapper -->
+	
+		<footer id="colophon" class="site-footer" role="contentinfo">
+
+			<div class="site-footer-secondary columns-3">
+				<div class="site-content-wrapper">
+											<div class="footer-column footer-column"><aside id="nav_menu-2" class="widget widget_nav_menu"><h1 class="widget-title">About ITS</h1><div class="menu-footer-about-container"><ul id="menu-footer-about" class="menu"><li id="menu-item-14055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14055"><a href="https://itservices.usc.edu/contact/" >Contact ITS</a></li>
+<li id="menu-item-10327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10327"><a href="https://itservices.usc.edu/contact/location/" >Location and Directions</a></li>
+<li id="menu-item-14056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14056"><a href="https://itservices.usc.edu/contact/school-list/" >Local IT Support</a></li>
+<li id="menu-item-14905" class="icon-twitter menu-item menu-item-type-custom menu-item-object-custom menu-item-14905"><a href="https://twitter.com/uscITServices" onclick="javascript:_gaq.push(['_trackEvent','outbound-menu','http://twitter.com']);">@USCITServices</a></li>
+</ul></div></aside></div>
+																<div class="footer-column footer-column-2"><aside id="nav_menu-3" class="widget widget_nav_menu"><h1 class="widget-title">Related Websites</h1><div class="menu-footer-departments-container"><ul id="menu-footer-departments" class="menu"><li id="menu-item-10307" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10307"><a href="http://cio.usc.edu/" >Office of the CIO</a></li>
+<li id="menu-item-10308" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10308"><a href="http://hpcc.usc.edu/" >Center for High-Performance Computing</a></li>
+</ul></div></aside></div>
+																					<div class="footer-column footer-column-4"><aside id="text-5" class="widget widget_text"><h1 class="widget-title">Customer Support Center</h1>			<div class="textwidget"><p><a href="mailto:consult@usc.edu">consult@usc.edu</a><br />
+213-740-5555<br />
+<a href="https://itsusc.service-now.com/ess_portal/main_content.do?sysparm_content_url=com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=906528a10a0a0bf000a85bc20dfb6541" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://itsusc.service-now.com']);" target="_blank">Report an Issue</a></p>
+</div>
+		</aside></div>
+					
+				</div><!-- .site-content-wrapper -->
+			</div><!-- .site-footer-wrapper -->
+
+			
+<div class="site-contact-wrapper" id="site-contact-footer">
+	<section class="site-contact">
+		<h1 class="section-title">Feedback</h1>
+						<span class="website-by">
+					Designed & Developed by <a href="https://itservices.usc.edu/webservices/">USC Web Services</a>				</span>
+					</section>
+</div>
+			<script type='text/javascript' src='https://itservices.usc.edu/wp-content/themes/it-services-2017/js/it-services.min.js?ver=2.7.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var twitter_ajax_obj = {"ajax_url":"https:\/\/itservices.usc.edu\/wp-admin\/admin-ajax.php","nonce":"bf6ed182e7"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://itservices.usc.edu/wp-content/themes/it-services-2017/js/theme-actions.js'></script>
+<script type='text/javascript' src='https://itservices.usc.edu/wp-includes/js/wp-embed.min.js?ver=4.8'></script>
+
+		</footer><!-- .site-footer -->
+
+
+
+</div><!-- .site-wrapper -->
+
+
+
+<!-- google analytics -->
+<!-- Please set Google Analytics position to "manual" in the settings, or remove this call to uga_analytics(); -->
+</body>
+</html>
+
+<!-- Dynamic page generated in 1.625 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2017-07-10 18:04:32 -->
+
+<!-- super cache -->8ŠN•»}      Yd&™Yd'=ö§Yd&œ   '    :https://itservices.usc.edu/sftp/cline/ necko:classified 1 strongly-framed 1 security-info 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 request-method GET request-Accept-Encoding gzip, deflate, br response-head HTTP/1.1 200 OK
+Date: Tue, 11 Jul 2017 01:15:06 GMT
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16
+X-Powered-By: PHP/5.4.16
+Vary: Accept-Encoding,Cookie
+Cache-Control: max-age=3, must-revalidate
+WP-Super-Cache: Served supercache file from PHP
+Content-Type: text/html; charset=UTF-8
+ original-response-headers Date: Tue, 11 Jul 2017 01:15:06 GMT
+Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16
+X-Powered-By: PHP/5.4.16
+Vary: Accept-Encoding,Cookie
+Cache-Control: max-age=3, must-revalidate
+WP-Super-Cache: Served supercache file from PHP
+Keep-Alive: timeout=15, max=96
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+Set-Cookie: NSC_dvtupntjuft_qspe=ffffffff093a181045525d5f4f58455e445a4a42378b;path=/;httponly
+ charset UTF-8 uncompressed-len 0 predictor::resource-count 20 predictor::https://itservices.usc.edu/wp-content/themes/it-services-2017/css/usc-it-services.css?ver=2.7.0 1,1,1499735705,4096 predictor::https://itservices.usc.edu/wp-includes/js/jquery/jquery.js?ver=1.12.4 1,1,1499735705,4096 predictor::https://itservices.usc.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1 1,1,1499735705,4096 predictor::https://use.typekit.net/bht7dnl.js 1,1,1499735705,4096 predictor::https://itservices.usc.edu/wp-content/themes/it-services-2017/js/it-services.min.js?ver=2.7.0 1,1,1499735705,4096 predictor::https://itservices.usc.edu/wp-content/themes/it-services-2017/js/theme-actions.js 1,1,1499735705,4096 predictor::https://itservices.usc.edu/wp-includes/js/wp-embed.min.js?ver=4.8 1,1,1499735705,4096 predictor::https://www.google-analytics.com/analytics.js 1,1,1499735705,4096 predictor::https://itservices.usc.edu/wp-includes/js/wp-emoji-release.min.js?ver=4.8 1,1,1499735705,4096 predictor::https://www.google-analytics.com/r/collect?v=1&_v=j56&a=1552953055&t=pageview&_s=1&dl=https%3A%2F%2Fitservices.usc.edu%2Fsftp%2Fcline%2F&dr=https%3A%2F%2Fwww.google.com%2F&ul=en-us&de=UTF-8&dt=SFTP%20Using%20Command%20Line(UNIX%2C%20Mac%20OS%20X)%20%7C%20IT%20Services%20%7C%20USC&sd=24-bit&sr=1920x1080&vp=1855x953&je=0&_u=IEBAAAABI~&jid=812789531&gjid=1122005751&cid=899027378.1499735707&tid=UA-584548-1&_gid=292290215.1499735707&_r=1&z=385724078 1,1,1499735705,4096 predictor::https://www.google-analytics.com/r/collect?v=1&_v=j56&a=1552953055&t=pageview&_s=1&dl=https%3A%2F%2Fitservices.usc.edu%2Fsftp%2Fcline%2F&dr=https%3A%2F%2Fwww.google.com%2F&ul=en-us&de=UTF-8&dt=SFTP%20Using%20Command%20Line(UNIX%2C%20Mac%20OS%20X)%20%7C%20IT%20Services%20%7C%20USC&sd=24-bit&sr=1920x1080&vp=1855x953&je=0&_u=IEDAAAABI~&jid=181261331&gjid=1138095617&cid=899027378.1499735707&tid=UA-584548-5&_gid=292290215.1499735707&_r=1&z=1630303674 1,1,1499735705,4096 predictor::https://itservices.usc.edu/wp-content/themes/it-services-2017/images/usc-logos-all.svg 1,1,1499735705,4096 predictor::https://use.typekit.net/af/085d88/00000000000000003b9ad1b3/27/l?subset_id=2&fvd=n8&v=3 1,1,1499735705,4096 predictor::https://use.typekit.net/af/a3ca77/00000000000000003b9ad1b9/27/l?subset_id=2&fvd=n4&v=3 1,1,1499735705,4096 predictor::https://itservices.usc.edu/wp-content/themes/it-services-2017/fonts/usc-its-v2-4.woff?1492463767 1,1,1499735705,4096 predictor::https://use.typekit.net/af/98849f/00000000000000003b9ad1ba/27/l?subset_id=2&fvd=i4&v=3 1,1,1499735705,4096 predictor::https://use.typekit.net/af/2793a0/00000000000000003b9ad1b1/27/l?subset_id=2&fvd=n7&v=3 1,1,1499735705,4096 predictor::https://use.typekit.net/af/752410/00000000000000003b9ad1bb/27/l?subset_id=2&fvd=n6&v=3 1,1,1499735705,4096 predictor::https://use.typekit.net/af/0e059c/00000000000000003b9ad1b5/27/l?subset_id=2&fvd=n3&v=3 1,1,1499735705,4096 predictor::https://p.typekit.net/p.gif?s=1&k=bht7dnl&ht=tk&h=itservices.usc.edu&f=139.169.173.175.176.5474&a=399070&js=1.18.21&app=typekit&_=1499735708736 1,1,1499735705,4096   AC

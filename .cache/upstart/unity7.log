@@ -1,0 +1,13 @@
+ERROR - ContextualIdentityService - Unknown version found in /home/grant_rosen678/.mozilla/firefox/t29nhnbl.default/containers.json
+WARN  2017-07-13 17:39:44 unity.shell.compiz unityshell.cpp:3241 Animation plugin not found. Can't set minimize speed.
+WARN  2017-07-13 17:39:52 unity.shell.compiz unityshell.cpp:3241 Animation plugin not found. Can't set minimize speed.
+WARN  2017-07-13 17:39:56 unity.shell.compiz unityshell.cpp:3241 Animation plugin not found. Can't set minimize speed.
+WARN  2017-07-13 17:39:59 unity.shell.compiz unityshell.cpp:3241 Animation plugin not found. Can't set minimize speed.
+WARN  2017-07-13 17:40:01 unity.shell.compiz unityshell.cpp:3241 Animation plugin not found. Can't set minimize speed.
+WARN  2017-07-13 17:40:06 unity.shell.compiz unityshell.cpp:3241 Animation plugin not found. Can't set minimize speed.
+WARN  2017-07-13 17:40:11 unity.shell.compiz unityshell.cpp:3241 Animation plugin not found. Can't set minimize speed.
+1499982342313	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+1499982342320	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+1499982342328	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+1499982342344	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+1499982342414	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
